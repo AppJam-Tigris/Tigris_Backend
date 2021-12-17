@@ -8,7 +8,12 @@ import lombok.Getter;
 public enum ErrorCode {
 
     INVALID_TOKEN(401, "Invalid Token"),
-    EXPIRED_TOKEN(401, "Expired Token")
+    EXPIRED_TOKEN(401, "Expired Token"),
+
+    USER_ALREADY_EXISTS(409, "User Already Exists"),
+    USER_NOT_FOUND(404, "User Not Found"),
+
+    INVALID_PASSWORD(401, "Invalid Password")
     ;
 
     private final int status;

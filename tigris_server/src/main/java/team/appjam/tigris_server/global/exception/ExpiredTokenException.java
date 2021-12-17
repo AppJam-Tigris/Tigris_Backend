@@ -1,6 +1,6 @@
 package team.appjam.tigris_server.global.exception;
 
-import team.appjam.tigris_server.global.error.BusinessException;
+import team.appjam.tigris_server.global.error.exception.BusinessException;
 import team.appjam.tigris_server.global.error.ErrorCode;
 
 public class ExpiredTokenException extends BusinessException {

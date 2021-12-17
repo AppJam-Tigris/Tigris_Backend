@@ -25,4 +25,5 @@ public class JwtProperties {
         this.header = header;
         this.prefix = prefix;
     }
+
 }

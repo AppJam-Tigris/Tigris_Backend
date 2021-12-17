@@ -1,6 +1,7 @@
 package team.appjam.tigris_server.global.error;
 
 import org.springframework.web.filter.OncePerRequestFilter;
+import team.appjam.tigris_server.global.error.exception.BusinessException;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

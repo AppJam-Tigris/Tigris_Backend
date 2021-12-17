@@ -1,7 +1,8 @@
-package team.appjam.tigris_server.global.error;
+package team.appjam.tigris_server.global.error.exception;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import team.appjam.tigris_server.global.error.ErrorCode;
 
 @Getter
 @RequiredArgsConstructor

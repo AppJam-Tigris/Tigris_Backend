@@ -6,6 +6,7 @@ import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import team.appjam.tigris_server.global.error.exception.BusinessException;
 
 import java.util.HashMap;
 import java.util.Map;
