@@ -12,11 +12,11 @@ import java.util.Base64;
 @ConfigurationProperties(prefix = "jwt")
 public class JwtProperties {
 
+    private final String header;
+    private final String prefix;
     private final String secretKey;
     private final Long accessExp;
     private final Long refreshExp;
-    private final String header;
-    private final String prefix;
 
     public JwtProperties(String secretKey, Long accessExp, Long refreshExp, String header, String prefix) {
         this.secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes(StandardCharsets.UTF_8));
