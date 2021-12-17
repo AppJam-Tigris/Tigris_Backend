@@ -1,0 +1,27 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: mysql
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+  datasource:
+    url: ${DB_URL:jdbc:mysql://project09.can9zk2slhrx.ap-northeast-2.rds.amazonaws.com:3306/nms?serverTimezone=UTC&characterEncoding=UTF-8}
+    username: ${DB_USER:admin}
+    password: ${DB_PWD:rlaqjawls1!}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  redis:
+    port: ${REDIS_PORT:6379}
+    host: ${REDIS_HOST:localhost}
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+jwt:
+  header: ${JWT_HEADER:Authorization}
+  prefix: ${JWT_PREFIX:Bearer}
+  secretKey: ${JWT_SECRET_KEY:asdfasdfsdfadsfsdf}
+  accessExp: ${JWT_ACCESS_EXP:1800}
+  refreshExp: ${JWT_REFRESH_EXP:1296000}
