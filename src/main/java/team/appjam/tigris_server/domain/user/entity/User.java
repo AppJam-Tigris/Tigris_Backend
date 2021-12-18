@@ -1,13 +1,12 @@
 package team.appjam.tigris_server.domain.user.entity;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class User {
@@ -22,7 +21,7 @@ public class User {
     private String phoneNumber;
 
     @Column(length = 6, nullable = false)
-    private String frontHumanNum;
+    private String birthDay;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -41,11 +40,5 @@ public class User {
 
     @Column(nullable = false)
     private String password;
-
-    @Builder
-    public User(String uid, String password) {
-        this.uid = uid;
-        this.password = password;
-    }
 
 }
