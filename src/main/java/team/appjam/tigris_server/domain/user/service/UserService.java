@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import team.appjam.tigris_server.domain.user.api.dto.request.CheckDuplicateRequest;
 import team.appjam.tigris_server.domain.user.api.dto.request.JoinRequest;
 import team.appjam.tigris_server.domain.user.api.dto.request.LoginRequest;
 import team.appjam.tigris_server.domain.user.api.dto.response.UserInfoResponse;
@@ -68,6 +69,13 @@ public class UserService {
         User user = userFacade.getCurrentUser();
 
         return new UserInfoResponse(user);
+    }
+
+    public void checkDuplicationUid(CheckDuplicateRequest checkDuplicateRequest) {
+
+        if(userRepository.findByUid(checkDuplicateRequest.getUid()).isPresent())
+            throw UserAlreadyExistsException.EXCEPTION;
+
     }
 
 }
