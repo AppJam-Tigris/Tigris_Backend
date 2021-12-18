@@ -1,9 +1,6 @@
 package team.appjam.tigris_server.domain.authcode.entity;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.TimeToLive;
@@ -12,6 +9,7 @@ import org.springframework.data.redis.core.TimeToLive;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @RedisHash
 @Builder
+@AllArgsConstructor
 public class AuthCode {
 
     @Id
