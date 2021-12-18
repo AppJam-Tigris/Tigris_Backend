@@ -2,13 +2,35 @@ package team.appjam.tigris_server.domain.user.api.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import team.appjam.tigris_server.domain.user.entity.Gender;
+import team.appjam.tigris_server.domain.user.entity.Location;
+import team.appjam.tigris_server.domain.user.entity.Nationality;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 @Getter
 @NoArgsConstructor
 public class JoinRequest {
+
+    @NotBlank(message = "name은 Null, 공백을 허용하지 않습니다.")
+    private String name;
+
+    @NotBlank(message = "phoneNumber는 Null, 공백을 허용하지 않습니다.")
+    private String phoneNumber;
+
+    @NotBlank(message = "birthDay는 Null, 공백을 허용하지 않습니다.")
+    private String birthDay;
+
+    @NotNull(message = "gender는 Null을 허용하지 않습니다.")
+    private Gender gender;
+
+    @NotNull(message = "nationality는 Null을 허용하지 않습니다.")
+    private Nationality nationality;
+
+    @NotNull(message = "location은 Null을 허용하지 않습니다.")
+    private Location location;
 
     @NotBlank(message = "uid는 Null, 공백을 허용하지 않습니다.")
     private String uid;
