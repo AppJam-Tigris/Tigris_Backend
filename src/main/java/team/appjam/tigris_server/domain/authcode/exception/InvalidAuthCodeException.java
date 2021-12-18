@@ -5,7 +5,10 @@ import team.appjam.tigris_server.global.error.exception.BusinessException;
 
 public class InvalidAuthCodeException extends BusinessException {
 
-    public InvalidAuthCodeException() {
+    public static BusinessException EXCEPTION =
+            new InvalidAuthCodeException();
+
+    private InvalidAuthCodeException() {
         super(ErrorCode.INVALID_CODE);
     }
 }
