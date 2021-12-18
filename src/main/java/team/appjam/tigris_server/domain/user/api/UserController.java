@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import team.appjam.tigris_server.domain.authcode.dto.SendAuthCodeRequest;
 import team.appjam.tigris_server.domain.authcode.dto.VerifyAuthCodeRequest;
 import team.appjam.tigris_server.domain.authcode.service.AuthCodeService;
-import team.appjam.tigris_server.domain.user.api.dto.JoinRequest;
-import team.appjam.tigris_server.domain.user.api.dto.LoginRequest;
+import team.appjam.tigris_server.domain.user.api.dto.request.JoinRequest;
+import team.appjam.tigris_server.domain.user.api.dto.request.LoginRequest;
+import team.appjam.tigris_server.domain.user.api.dto.response.UserInfoResponse;
 import team.appjam.tigris_server.domain.user.service.UserService;
 import team.appjam.tigris_server.global.security.jwt.dto.TokenResponse;
 
@@ -40,6 +41,11 @@ public class UserController {
     @PutMapping("/phone")
     public void verify(@RequestBody @Valid VerifyAuthCodeRequest authCodeRequest) {
         authCodeService.verifyAuthCode(authCodeRequest);
+    }
+
+    @GetMapping
+    public UserInfoResponse getMyInfo() {
+        return userService.getMyInfo();
     }
 
 }
