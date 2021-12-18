@@ -24,7 +24,7 @@ public class JoinRequest {
     private String code;
 
     @NotNull(message = "birthDay는 Null, 공백을 허용하지 않습니다.")
-    private Integer birthDay;
+    private String birthDay;
 
     @NotNull(message = "gender는 Null을 허용하지 않습니다.")
     private Gender gender;
