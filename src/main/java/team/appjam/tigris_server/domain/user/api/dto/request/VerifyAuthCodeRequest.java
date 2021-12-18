@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
 public class VerifyAuthCodeRequest {
 
     @NotBlank(message = "phoneNumber는 Null, 공백을 허용하지 않습니다.")
-    private String phoneNumber;
+    private Integer phoneNumber;
 
     @NotBlank(message = "code는 Null, 공백을 허용하지 않습니다.")
     private String code;
