@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import team.appjam.tigris_server.domain.authcode.service.AuthCodeService;
 import team.appjam.tigris_server.domain.user.api.dto.request.CheckDuplicateRequest;
 import team.appjam.tigris_server.domain.user.api.dto.request.JoinRequest;
 import team.appjam.tigris_server.domain.user.api.dto.request.LoginRequest;
@@ -24,8 +25,9 @@ public class UserService {
 
     private final UserFacade userFacade;
     private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider tokenProvider;
+    private final PasswordEncoder passwordEncoder;
+    private final AuthCodeService authCodeService;
 
     @Transactional
     public void join(JoinRequest joinRequest) {
@@ -36,6 +38,8 @@ public class UserService {
         ).isPresent()) {
             throw UserAlreadyExistsException.EXCEPTION;
         }
+
+        authCodeService.verifyAuthCode(joinRequest.getPhoneNumber(), joinRequest.getCode());
 
         userRepository.save(
                 User.builder()
