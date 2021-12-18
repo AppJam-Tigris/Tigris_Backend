@@ -28,6 +28,6 @@ jwt:
 
 coolsms:
   devHee:
-    apiKey: ${API_KEY:NCSV5IMGKQD8GRYY}
+    apikey: ${API_KEY:NCSV5IMGKQD8GRYY}
     apisecret: ${API_SECRET:SFTOWDI6OHXOPOB0227KYAMKE8X1QCDD}
     fromnumber: ${FROM_NUMBER:01023829326}
