@@ -19,7 +19,7 @@ public class ClinicInfoResponse {
         this.name = clinic.getName();
         this.address = clinic.getAddress();
         this.city = clinic.getCity();
-        this.managerPhoneNumber = clinic.getManagerClinic();
+        this.managerPhoneNumber = clinic.getManagerPhoneNumber();
     }
 
 }
