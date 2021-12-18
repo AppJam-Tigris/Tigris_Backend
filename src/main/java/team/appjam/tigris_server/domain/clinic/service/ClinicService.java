@@ -18,12 +18,21 @@ public class ClinicService {
     private final UserFacade userFacade;
     private final ClinicRepository clinicRepository;
 
+<<<<<<< Updated upstream
     @Transactional(readOnly = true)
     public List<ClinicInfoResponse> searchClinicInfo(String keyword) {
         return clinicRepository.findByNameContaining(keyword).stream()
                 .map(ClinicInfoResponse::new)
                 .collect(Collectors.toList());
     }
+=======
+    @Transactional(readOnly = true)
+    public ClinicResponse searchClinicInfo(String keyword) {
+        return clinicRepository.findByNameContaining(keyword).stream()
+                .map(ClinicResponse::new)
+                .collect(Collectors.toList());
+    }
+>>>>>>> Stashed changes
 
     @Transactional(readOnly = true)
     public List<ClinicInfoResponse> getRecommendClinic() {

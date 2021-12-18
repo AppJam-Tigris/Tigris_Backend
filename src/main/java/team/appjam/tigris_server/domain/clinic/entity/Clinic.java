@@ -34,4 +34,6 @@ public class Clinic {
 
     private String managerPhoneNumber;
 
+
+
 }
