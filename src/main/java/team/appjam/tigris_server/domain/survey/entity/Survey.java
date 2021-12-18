@@ -24,12 +24,17 @@ public class Survey {
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "user_id")
     private User writer;
+
     @Enumerated(EnumType.STRING)
     private CovidCheckType covidCheckType;
+
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "clinic_id")
     private Clinic clinic;
-    @ElementCollection
+
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(name = "question",
+            joinColumns = @JoinColumn(name = "question_id", referencedColumnName = "id"))
     private List<Question> questionList;
 
 }
