@@ -7,7 +7,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 
   datasource:
-    url: ${DB_URL:jdbc:mysql://project09.can9zk2slhrx.ap-northeast-2.rds.amazonaws.com:3306/nms?serverTimezone=UTC&characterEncoding=UTF-8}
+    url: ${DB_URL:jdbc:mysql://project09.can9zk2slhrx.ap-northeast-2.rds.amazonaws.com:3306/tigris?serverTimezone=UTC&characterEncoding=UTF-8}
     username: ${DB_USER:admin}
     password: ${DB_PWD:rlaqjawls1!}
     driver-class-name: com.mysql.cj.jdbc.Driver
