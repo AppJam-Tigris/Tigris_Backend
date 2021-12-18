@@ -1,7 +1,9 @@
 package team.appjam.tigris_server.global.sms;
 
+import net.nurigo.java_sdk.exceptions.CoolsmsException;
+
 public interface ShortMessageService {
 
-    String sendSMS(String toNumber, String randomNumber);
+    void sendSMS(String toNumber, String randomNumber);
 
 }
