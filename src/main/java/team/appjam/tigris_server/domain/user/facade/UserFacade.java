@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import team.appjam.tigris_server.domain.user.entity.User;
 import team.appjam.tigris_server.domain.user.repository.UserRepository;
 import team.appjam.tigris_server.global.exception.AuthenticationNotFoundException;
-import team.appjam.tigris_server.global.exception.UserNotFoundException;
+import team.appjam.tigris_server.domain.user.exception.UserNotFoundException;
 import team.appjam.tigris_server.global.security.auth.AuthDetails;
 
 @RequiredArgsConstructor

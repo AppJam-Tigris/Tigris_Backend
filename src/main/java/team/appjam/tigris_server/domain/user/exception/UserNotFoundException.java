@@ -1,4 +1,4 @@
-package team.appjam.tigris_server.global.exception;
+package team.appjam.tigris_server.domain.user.exception;
 
 import team.appjam.tigris_server.global.error.ErrorCode;
 import team.appjam.tigris_server.global.error.exception.BusinessException;
