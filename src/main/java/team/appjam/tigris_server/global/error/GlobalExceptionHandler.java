@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import team.appjam.tigris_server.global.error.exception.BusinessException;
@@ -22,13 +23,10 @@ public class GlobalExceptionHandler {
         );
     }
 
-    @ExceptionHandler(BindException.class)
-    public ResponseEntity<?> bindException(BindException e) {
-        Map<String, String> errorMap = new HashMap<>();
-
-        for (FieldError error : e.getFieldErrors()) {
-            errorMap.put(error.getField(), error.getDefaultMessage());
-        }
-        return new ResponseEntity<>(errorMap , HttpStatus.BAD_REQUEST);
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ErrorResponse> methodValidException(MethodArgumentNotValidException e) {
+        return new ResponseEntity<>(
+                new ErrorResponse(e.getBindingResult().getAllErrors().get(0).getDefaultMessage()), HttpStatus.BAD_REQUEST);
     }
+
 }
