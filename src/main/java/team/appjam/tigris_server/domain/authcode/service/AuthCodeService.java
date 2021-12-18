@@ -42,7 +42,7 @@ public class AuthCodeService {
     public void verifyAuthCode(VerifyAuthCodeRequest authCodeRequest) {
 
         if (!authCodeRequest.getCode().equals(authCodeRepository.findByPhoneNumber(authCodeRequest.getPhoneNumber()))) {
-            throw InvalidAuthCodeException.EXCEPTION;
+            throw new InvalidAuthCodeException();
         }
 
     }
