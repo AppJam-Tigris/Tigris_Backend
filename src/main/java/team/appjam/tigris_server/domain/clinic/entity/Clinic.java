@@ -26,11 +26,11 @@ public class Clinic {
 
     private String saturDayTime;
 
-    private String holidayTime;
+    private String holiDayTime;
 
     private String repPhoneNumber;
 
-    private String managerName;
+    private String managerClinic;
 
     private String managerPhoneNumber;
 
