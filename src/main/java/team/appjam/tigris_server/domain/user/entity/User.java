@@ -21,7 +21,7 @@ public class User {
     private String phoneNumber;
 
     @Column(length = 6, nullable = false)
-    private Integer birthDay;
+    private String birthDay;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
