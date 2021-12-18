@@ -17,9 +17,9 @@ public enum ErrorCode {
 
     INVALID_PASSWORD(401, "Invalid Password"),
 
+    CLINIC_NOT_FOUND(404, "Clinic Not Found"),
 
-    INVALID_CODE(404, "Invalid Code"),
-    NULL_CODE(404, "Code Could not be null")
+    INVALID_CODE(404, "Invalid Code")
     ;
 
     private final int status;
