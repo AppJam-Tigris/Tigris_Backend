@@ -20,7 +20,7 @@ public enum ErrorCode {
     CLINIC_NOT_FOUND(404, "Clinic Not Found"),
 
     INVALID_CODE(404, "Invalid Code"),
-    AUTH_CODE_NOT_FOUND(404, "Auth Code Not Found")
+    AUTH_CODE_NOT_FOUND(404, "Auth Code Not Found"),
     ;
 
     private final int status;
