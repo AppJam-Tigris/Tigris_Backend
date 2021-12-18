@@ -1,4 +1,4 @@
-package team.appjam.tigris_server.domain.user.api.dto;
+package team.appjam.tigris_server.domain.user.api.dto.request;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,8 +20,8 @@ public class JoinRequest {
     @NotBlank(message = "phoneNumber는 Null, 공백을 허용하지 않습니다.")
     private String phoneNumber;
 
-    @NotBlank(message = "birthDay는 Null, 공백을 허용하지 않습니다.")
-    private String birthDay;
+    @NotNull(message = "birthDay는 Null, 공백을 허용하지 않습니다.")
+    private Integer birthDay;
 
     @NotNull(message = "gender는 Null을 허용하지 않습니다.")
     private Gender gender;

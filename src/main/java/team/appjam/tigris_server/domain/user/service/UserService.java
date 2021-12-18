@@ -4,8 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import team.appjam.tigris_server.domain.user.api.dto.JoinRequest;
-import team.appjam.tigris_server.domain.user.api.dto.LoginRequest;
+import team.appjam.tigris_server.domain.user.api.dto.request.JoinRequest;
+import team.appjam.tigris_server.domain.user.api.dto.request.LoginRequest;
+import team.appjam.tigris_server.domain.user.api.dto.response.UserInfoResponse;
 import team.appjam.tigris_server.domain.user.entity.User;
 import team.appjam.tigris_server.domain.user.facade.UserFacade;
 import team.appjam.tigris_server.domain.user.repository.UserRepository;
@@ -60,6 +61,13 @@ public class UserService {
                         user -> tokenProvider.generateToken(loginRequest.getUid(), "user")
                 )
                 .orElseThrow(() -> InvalidPasswordException.EXCEPTION);
+    }
+
+    @Transactional(readOnly = true)
+    public UserInfoResponse getMyInfo() {
+        User user = userFacade.getCurrentUser();
+
+        return new UserInfoResponse(user);
     }
 
 }
