@@ -1,5 +1,6 @@
 package team.appjam.tigris_server.global.error;
 
+import net.nurigo.java_sdk.exceptions.CoolsmsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
@@ -29,4 +30,8 @@ public class GlobalExceptionHandler {
                 new ErrorResponse(e.getBindingResult().getAllErrors().get(0).getDefaultMessage()), HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(CoolsmsException.class)
+    public ResponseEntity<?> coolSMSExceptoin(CoolsmsException e){
+        return ResponseEntity.status(e.getCode()).body(e.getMessage());
+    }
 }
