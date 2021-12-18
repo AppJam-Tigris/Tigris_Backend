@@ -6,6 +6,5 @@ import team.appjam.tigris_server.domain.authcode.entity.AuthCode;
 import java.util.Optional;
 
 public interface AuthCodeRepository extends CrudRepository<AuthCode, Integer> {
-    Optional<AuthCode> findByPhoneNumber(Integer phoneNum);
-
+    Optional<AuthCode> findByPhoneNumber(String phoneNum);
 }

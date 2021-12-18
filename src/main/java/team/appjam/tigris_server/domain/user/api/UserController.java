@@ -35,11 +35,6 @@ public class UserController {
         authCodeService.sendAuthCode(authCodeRequest);
     }
 
-    @PutMapping("/phone")
-    public void verify(@RequestBody @Valid VerifyAuthCodeRequest authCodeRequest) {
-        authCodeService.verifyAuthCode(authCodeRequest);
-    }
-
     @GetMapping
     public UserInfoResponse getMyInfo() {
         return userService.getMyInfo();

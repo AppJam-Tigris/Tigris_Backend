@@ -20,6 +20,9 @@ public class JoinRequest {
     @NotBlank(message = "phoneNumber는 Null, 공백을 허용하지 않습니다.")
     private String phoneNumber;
 
+    @NotBlank(message = "code는 Null, 공백을 허용하지 않습니다.")
+    private String code;
+
     @NotNull(message = "birthDay는 Null, 공백을 허용하지 않습니다.")
     private Integer birthDay;
 
