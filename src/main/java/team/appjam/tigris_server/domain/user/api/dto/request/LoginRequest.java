@@ -1,4 +1,4 @@
-package team.appjam.tigris_server.domain.user.api.dto;
+package team.appjam.tigris_server.domain.user.api.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

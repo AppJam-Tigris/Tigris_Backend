@@ -5,11 +5,16 @@ import net.nurigo.java_sdk.exceptions.CoolsmsException;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.math.RandomUtils;
 import org.springframework.stereotype.Service;
+<<<<<<< HEAD
 import team.appjam.tigris_server.domain.authcode.dto.SendAuthCodeRequest;
 import team.appjam.tigris_server.domain.authcode.dto.VerifyAuthCodeRequest;
 import team.appjam.tigris_server.domain.authcode.entity.AuthCode;
 import team.appjam.tigris_server.domain.authcode.exception.InvalidAuthCodeExceptoin;
 import team.appjam.tigris_server.domain.authcode.exception.NullCodeExceptoin;
+=======
+import team.appjam.tigris_server.domain.user.api.dto.request.SendAuthCodeRequest;
+import team.appjam.tigris_server.domain.user.api.dto.request.VerifyAuthCodeRequest;
+>>>>>>> main
 import team.appjam.tigris_server.domain.authcode.repository.AuthCodeRepository;
 import team.appjam.tigris_server.global.error.GlobalExceptionHandler;
 import team.appjam.tigris_server.global.sms.ShortMessageService;
