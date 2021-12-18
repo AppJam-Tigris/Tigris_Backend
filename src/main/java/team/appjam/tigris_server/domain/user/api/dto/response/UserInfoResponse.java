@@ -13,7 +13,7 @@ public class UserInfoResponse {
 
     private final String name;
     private final String phoneNumber;
-    private final Integer birthDay;
+    private final String birthDay;
     private final Gender gender;
     private final Location location;
 
