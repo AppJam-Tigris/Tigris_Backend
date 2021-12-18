@@ -2,8 +2,8 @@ package team.appjam.tigris_server.domain.authcode.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import team.appjam.tigris_server.domain.authcode.dto.SendAuthCodeRequest;
-import team.appjam.tigris_server.domain.authcode.dto.VerifyAuthCodeRequest;
+import team.appjam.tigris_server.domain.user.api.dto.request.SendAuthCodeRequest;
+import team.appjam.tigris_server.domain.user.api.dto.request.VerifyAuthCodeRequest;
 import team.appjam.tigris_server.domain.authcode.repository.AuthCodeRepository;
 
 @RequiredArgsConstructor
