@@ -11,8 +11,8 @@ import team.appjam.tigris_server.domain.user.api.dto.response.UserInfoResponse;
 import team.appjam.tigris_server.domain.user.entity.User;
 import team.appjam.tigris_server.domain.user.facade.UserFacade;
 import team.appjam.tigris_server.domain.user.repository.UserRepository;
-import team.appjam.tigris_server.global.exception.InvalidPasswordException;
-import team.appjam.tigris_server.global.exception.UserAlreadyExistsException;
+import team.appjam.tigris_server.domain.user.exception.InvalidPasswordException;
+import team.appjam.tigris_server.domain.user.exception.UserAlreadyExistsException;
 import team.appjam.tigris_server.global.security.jwt.JwtTokenProvider;
 import team.appjam.tigris_server.global.security.jwt.dto.TokenResponse;
 
