@@ -13,7 +13,11 @@ public enum ErrorCode {
     USER_ALREADY_EXISTS(409, "User Already Exists"),
     USER_NOT_FOUND(404, "User Not Found"),
 
-    INVALID_PASSWORD(401, "Invalid Password")
+    INVALID_PASSWORD(401, "Invalid Password"),
+
+
+    INVALID_CODE(404, "Invalid Code"),
+    NULL_CODE(404, "Code Could not be null")
     ;
 
     private final int status;
