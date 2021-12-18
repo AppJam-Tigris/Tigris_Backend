@@ -1,26 +1,30 @@
-package team.appjam.tigris_server.domain.survey.dto.request;
+package team.appjam.tigris_server.domain.survey.api.request;
 
 
 import lombok.Getter;
-import team.appjam.tigris_server.domain.clinic.entity.Clinic;
+import lombok.NoArgsConstructor;
 import team.appjam.tigris_server.domain.clinic.entity.TimeSchedule;
 import team.appjam.tigris_server.domain.survey.entity.CovidCheckType;
 import team.appjam.tigris_server.domain.survey.entity.Question;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
 @Getter
+@NoArgsConstructor
 public class UploadSurveyRequest {
-    @NotBlank
+
+    @NotNull(message = "covidCheckType은 Null, 공백을 허용하지 않습니다.")
     private CovidCheckType covidCheckType;
-    @NotBlank
+
+    @NotNull(message = "clinicId Null, 공백을 허용하지 않습니다.")
     private Integer clinicId;
-    @NotBlank
+
+    @NotNull(message = "questionList는 Null, 공백을 허용하지 않습니다.")
     private List<Question> questionList;
-    @NotBlank
+
+    @NotNull(message = "timeSchedule은 Null, 공백을 허용하지 않습니다.")
     private TimeSchedule timeSchedule;
 
 }
