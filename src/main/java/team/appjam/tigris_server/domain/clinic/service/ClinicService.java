@@ -29,9 +29,7 @@ public class ClinicService {
 
     @Transactional(readOnly = true)
     public List<ClinicInfoResponse> getRecommendClinic() {
-        User user = userFacade.getCurrentUser();
-
-        return clinicRepository.findByCityContaining(user.getLocation().getRoadName()).stream()
+        return clinicRepository.findAll().stream()
                 .map(ClinicInfoResponse::new)
                 .collect(Collectors.toList());
     }

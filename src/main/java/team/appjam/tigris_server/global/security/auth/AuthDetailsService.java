@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import team.appjam.tigris_server.domain.user.exception.UserNotFoundException;
 import team.appjam.tigris_server.domain.user.repository.UserRepository;
 
 @RequiredArgsConstructor
@@ -17,7 +18,7 @@ public class AuthDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String uid) throws UsernameNotFoundException {
         return new AuthDetails(
                 userRepository.findByUid(uid)
-                        .orElseThrow()
+                        .orElseThrow(() -> UserNotFoundException.EXCEPTION)
         );
     }
 
