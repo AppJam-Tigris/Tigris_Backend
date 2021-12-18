@@ -27,12 +27,22 @@ public class UserService {
 
     @Transactional
     public void join(JoinRequest joinRequest) {
-        if(userRepository.findByUid(joinRequest.getUid()).isPresent()) {
+        if(userRepository.findByUidOrPhoneNumberOrBirthDay(
+                joinRequest.getUid(),
+                joinRequest.getPhoneNumber(),
+                joinRequest.getBirthDay()
+        ).isPresent()) {
             throw UserAlreadyExistsException.EXCEPTION;
         }
 
         userRepository.save(
                 User.builder()
+                        .name(joinRequest.getName())
+                        .phoneNumber(joinRequest.getPhoneNumber())
+                        .birthDay(joinRequest.getBirthDay())
+                        .gender(joinRequest.getGender())
+                        .nationality(joinRequest.getNationality())
+                        .location(joinRequest.getLocation())
                         .uid(joinRequest.getUid())
                         .password(passwordEncoder.encode(joinRequest.getPassword()))
                         .build()
