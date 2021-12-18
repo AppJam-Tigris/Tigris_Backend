@@ -5,15 +5,13 @@ import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.stereotype.Service;
 import team.appjam.tigris_server.domain.authcode.entity.AuthCode;
-import team.appjam.tigris_server.domain.authcode.exception.InvalidAuthCodeExceptoin;
+import team.appjam.tigris_server.domain.authcode.exception.InvalidAuthCodeException;
 import team.appjam.tigris_server.domain.authcode.repository.AuthCodeRepository;
 import team.appjam.tigris_server.domain.user.api.dto.request.SendAuthCodeRequest;
 import team.appjam.tigris_server.domain.user.api.dto.request.VerifyAuthCodeRequest;
 import team.appjam.tigris_server.global.sms.ShortMessageService;
 
-import java.util.Locale;
 import java.util.Optional;
-import java.util.UUID;
 
 @RequiredArgsConstructor
 @Service
@@ -44,7 +42,7 @@ public class AuthCodeService {
     public void verifyAuthCode(VerifyAuthCodeRequest authCodeRequest) {
 
         if (!authCodeRequest.getCode().equals(authCodeRepository.findByPhoneNumber(authCodeRequest.getPhoneNumber()))) {
-            throw new InvalidAuthCodeExceptoin();
+            throw new InvalidAuthCodeException();
         }
 
     }
