@@ -13,13 +13,12 @@ import org.springframework.data.redis.core.TimeToLive;
 public class AuthCode {
 
     @Id
-    private Integer phoneNumber;
+    private String phoneNumber;
 
     private String code;
 
     @TimeToLive
     private Long expiration;
-
 
     public AuthCode setCode(String code){
         this.code = code;

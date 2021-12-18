@@ -8,7 +8,6 @@ import team.appjam.tigris_server.domain.authcode.entity.AuthCode;
 import team.appjam.tigris_server.domain.authcode.exception.InvalidAuthCodeException;
 import team.appjam.tigris_server.domain.authcode.repository.AuthCodeRepository;
 import team.appjam.tigris_server.domain.user.api.dto.request.SendAuthCodeRequest;
-import team.appjam.tigris_server.domain.user.api.dto.request.VerifyAuthCodeRequest;
 import team.appjam.tigris_server.global.sms.ShortMessageService;
 
 import java.util.Optional;
@@ -39,11 +38,12 @@ public class AuthCodeService {
         shortMessageService.sendSMS(authCodeRequest.getPhoneNumber().toString(), random);
     }
 
-    public void verifyAuthCode(VerifyAuthCodeRequest authCodeRequest) {
+    public void verifyAuthCode(String phoneNumber, String code) {
 
-        if (!authCodeRequest.getCode().equals(authCodeRepository.findByPhoneNumber(authCodeRequest.getPhoneNumber()).get().getCode())) {
+        if (!code.equals(authCodeRepository.findByPhoneNumber(phoneNumber).get().getCode())) {
             throw InvalidAuthCodeException.EXCEPTION;
         }
 
     }
+
 }
