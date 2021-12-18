@@ -4,21 +4,19 @@ package team.appjam.tigris_server.domain.survey.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import team.appjam.tigris_server.domain.clinic.entity.Clinic;
+import org.springframework.transaction.annotation.Transactional;
 import team.appjam.tigris_server.domain.clinic.entity.Count;
 import team.appjam.tigris_server.domain.clinic.entity.TimeSchedule;
 import team.appjam.tigris_server.domain.clinic.repository.ClinicRepository;
 import team.appjam.tigris_server.domain.clinic.repository.CountRepository;
-import team.appjam.tigris_server.domain.survey.dto.request.UploadSurveyRequest;
+import team.appjam.tigris_server.domain.survey.api.request.UploadSurveyRequest;
 import team.appjam.tigris_server.domain.survey.entity.Survey;
 import team.appjam.tigris_server.domain.survey.exception.ClinicNotFoundException;
 import team.appjam.tigris_server.domain.survey.repository.SurveyRepository;
 import team.appjam.tigris_server.domain.user.facade.UserFacade;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.temporal.TemporalField;
 import java.util.Optional;
 
 @Service
@@ -32,6 +30,7 @@ public class SurveyServiceImpl implements SurveyService{
 
 
     @Override
+    @Transactional
     public void uploadSurvey(UploadSurveyRequest request) {
 
         clinicRepository.findById(request.getClinicId()).map(clinic ->
