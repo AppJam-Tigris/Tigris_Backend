@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  application:
+    image: jinwoo794533/tigris:0.01.03
+    build: .
+    ports:
+      - 8080:8080
+
+  redis:
+    image: redis
