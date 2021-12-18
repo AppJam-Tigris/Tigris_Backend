@@ -18,6 +18,6 @@ public class Clinic {
     private String name;
 
     @Column(nullable = false)
-    private String url;
+    private String link;
 
 }
